@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolForge - Internal Tools Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #4338CA;
+            --secondary: #10B981;
+            --text: #1F2937;
+            --text-light: #6B7280;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .header-cta {
+            margin-top: 40px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--secondary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        main {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+            border: 1px solid #E5E7EB;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            background-color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #F9FAFB;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-light);
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-left: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links .btn-primary {
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+        }
+
+        header {
+            padding-top: 160px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 8L16 24L24 8M12 16H20" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <span class="logo-text">Zigartiq</span>
+        </a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#docs">Documentation</a>
+            <a href="#login">Log in</a>
+            <a href="#" class="btn-primary">Get Started</a>
+        </div>
+    </nav>
+    <header>
+        <h1>Build Internal Tools in Hours, Not Weeks</h1>
+        <p>Connect your database, choose from ready-to-use charts, and deploy powerful internal tools without breaking a
+            sweat.</p>
+        <div class="header-cta">
+            <a href="#" class="btn-primary">Start Building Now</a>
+        </div>
+    </header>
+    <main>
+        <div class="section-title">
+            <h2>Everything You Need</h2>
+            <p>Build powerful internal tools without writing complex code</p>
+        </div>
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔌</div>
+                <h2>Quick Database Connect</h2>
+                <p>Connect to any database in minutes. Support for PostgreSQL, MySQL, MongoDB, and more.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h2>Ready-to-use Charts</h2>
+                <p>Beautiful visualizations out of the box. Customize charts with just a few clicks.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h2>Rapid Development</h2>
+                <p>Build and deploy internal tools in hours instead of weeks. No complex coding required.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h2>Enterprise Security</h2>
+                <p>Built-in authentication, role-based access control, and audit logs for peace of mind.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Zigartiq. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
